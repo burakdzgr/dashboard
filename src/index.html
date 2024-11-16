@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobie Dashboard</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body class="bg-gray-100 text-center">
+    <div class="flex h-full bg-gray-100">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="w-[300px] h-screen bg-sky text-white flex flex-col pr-8 pt-6 z-0 transition-width duration-300">
+            <!-- Logo Bölümü -->
+            <div class="flex items-center justify-center mb-6">
+                <a href="#" class="block">
+                    <img src="./assets/images/logo.png" alt="" class="w-40 h-[50px] object-contain">
+                </a>
+            </div>
+            <!-- Navigasyon Menüsü -->
+            <nav class="flex-1 pl-6 pt-6 space-y-2 border-t border-t-mainBorderColor/40">
+                <ul class="space-y-4">
+                    <li class="nav-item group transition">
+                        <a href="#" class="masked-radius flex items-center space-x-4 w-full p-3 active-item"
+                            onclick="toggleActive(this)">
+                            <span class="material-icons text-2xl list-item-icon">home</span>
+                            <span
+                                class="list-item-text text-lg font-medium group-hover:translate-x-1 transition whitespace-nowrap">Gösterge
+                                Paneli</span>
+                        </a>
+                    </li>
+                    <li class="nav-item group transition">
+                        <a href="#" class="masked-radius flex items-center space-x-4 w-full p-3"
+                            onclick="toggleActive(this)">
+                            <span class="material-icons text-2xl list-item-icon">photo_camera</span>
+                            <span
+                                class="text-lg font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Ürünlerim</span>
+                        </a>
+                    </li>
+                    <li class="nav-item group transition">
+                        <a href="#" class="masked-radius flex items-center space-x-4 w-full p-3"
+                            onclick="toggleActive(this)">
+                            <span class="material-icons text-2xl list-item-icon">help_outline</span>
+                            <span
+                                class="text-lg font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Destek
+                                Taleplerim</span>
+                        </a>
+                    </li>
+                    <li class="nav-item group transition">
+                        <a href="#" class="masked-radius flex items-center space-x-4 w-full p-3"
+                            onclick="toggleActive(this)">
+                            <span class="material-icons text-2xl list-item-icon">article</span>
+                            <span
+                                class="text-lg font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Sözleşmeler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item group transition">
+                        <a href="#" class="masked-radius flex items-center space-x-4 w-full p-3"
+                            onclick="toggleActive(this)">
+                            <span class="material-icons text-2xl list-item-icon">location_on</span>
+                            <span
+                                class="text-lg font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">İletişim</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mx-auto mb-10 w-full max-w-60  text-center shadow-md hover:shadow-xl transition sidebar-bottom">
+                <a href="#" target="_blank" rel="nofollow"
+                    class="flex items-center justify-center rounded-md bg-sky-400 p-2 text-sm text-textWhite hover:bg-opacity-95">
+                    <span class="material-icons mr-2">near_me
+                    </span>
+                    <span class="sidebar-bottom-text mt-0.5 whitespace-nowrap">Destek Talebi Oluştur</span>
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto rounded-3xl bg-mainGray -ml-8 z-10">
+            <header class="sticky top-0 bg-[#fff] shadow-md p-4 flex justify-between items-center">
+                <!-- Hamburger Menü İkonu -->
+                <button id="menuButton" class="material-icons text-3xl cursor-pointer"
+                    onclick="toggleSidebar()">menu</button>
+                <div class="flex items-center space-x-4">
+                    <div class="notifications-box relative">
+                        <!-- Notification Button -->
+                        <button type="button" onclick="toggleDropdown()"
+                            class="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg border border-mainBorderColor focus:outline-none">
+                            <span class="material-icons text-textColor">notifications</span>
+                            <span class="sr-only">Notifications</span>
+                            <div
+                                class="absolute inline-flex items-center justify-center w-6 h-6 text-minimal font-bold text-[#fff] bg-softRed border-2 border-mainBorderColor rounded-full -top-2 -right-2">
+                                20
+                            </div>
+                        </button>
+                        <div id="notificationDropdown"
+                            class="hidden absolute right-0 mt-2 min-w-96 bg-[#fff] border border-mainBorderColor rounded-lg shadow-lg z-10">
+
+                            <ul class="py-2 text-sm text-gray-700 overflow-y-auto max-h-[250px] custom-scrollbar">
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                                        <div
+                                            class='relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full'>
+                                            <img src="https://pagedone.io/asset/uploads/1704277384.png"
+                                                class="w-4 h-4 object-cover" alt="Bordered rounded avatar">
+                                        </div>
+                                        <span class="notification-message-text text-textColor text-left">Dış çekim
+                                            görselleriniz
+                                            sisteme
+                                            yüklenmiştir. Görüntülemek için <strong
+                                                class="mr-1 underline">buraya</strong>
+                                            tıklayınız</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                                        <div
+                                            class='relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full'>
+                                            <img src="https://pagedone.io/asset/uploads/1704277384.png"
+                                                class="w-4 h-4 object-cover" alt="Bordered rounded avatar">
+                                        </div>
+                                        <span class="notification-message-text text-textColor text-left">Dış çekim
+                                            görselleriniz
+                                            sisteme
+                                            yüklenmiştir. Görüntülemek için <strong
+                                                class="mr-1 underline">buraya</strong>
+                                            tıklayınız</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                                        <div
+                                            class='relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full'>
+                                            <img src="https://pagedone.io/asset/uploads/1704277384.png"
+                                                class="w-4 h-4 object-cover" alt="Bordered rounded avatar">
+                                        </div>
+                                        <span class="notification-message-text text-textColor text-left">Dış çekim
+                                            görselleriniz
+                                            sisteme
+                                            yüklenmiştir. Görüntülemek için <strong
+                                                class="mr-1 underline">buraya</strong>
+                                            tıklayınız</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                                        <div
+                                            class='relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full'>
+                                            <img src="https://pagedone.io/asset/uploads/1704277384.png"
+                                                class="w-4 h-4 object-cover" alt="Bordered rounded avatar">
+                                        </div>
+                                        <span class="notification-message-text text-textColor text-left">Dış çekim
+                                            görselleriniz
+                                            sisteme
+                                            yüklenmiştir. Görüntülemek için <strong
+                                                class="mr-1 underline">buraya</strong>
+                                            tıklayınız</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                                        <div
+                                            class='relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full'>
+                                            <img src="https://pagedone.io/asset/uploads/1704277384.png"
+                                                class="w-4 h-4 object-cover" alt="Bordered rounded avatar">
+                                        </div>
+                                        <span class="notification-message-text text-textColor text-left">Dış çekim
+                                            görselleriniz
+                                            sisteme
+                                            yüklenmiştir. Görüntülemek için <strong
+                                                class="mr-1 underline">buraya</strong>
+                                            tıklayınız</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="profile-box relative">
+                        <button id="dropdownInformationButton"
+                            class=" hover:bg-mainHoverGray transition focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
+                            type="button" onclick="toggleProfileDropdown()">
+                            <div
+                                class='relative w-10 h-10 bg-sky-100 border-2 border-solid border-sky flex justify-center items-center rounded-full'>
+                                <img src="https://pagedone.io/asset/uploads/1704277384.png"
+                                    alt="Bordered rounded avatar">
+                            </div>
+                            <span class="ml-2">Burak Dizieğri</span>
+                            <span class="material-icons">expand_more</span>
+
+                        </button>
+
+                        <div id="dropdownInformation"
+                            class="z-50 hidden bg-[#fff] divide-y divide-mainBorderColor rounded-lg shadow w-44 absolute right-0 top-[50px]">
+                            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                                <div>Bonnie Green</div>
+                                <div class="font-medium truncate">name@flowbite.com</div>
+                            </div>
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="dropdownInformationButton">
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Profilim</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Ayarlarım</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Taleplerim</a>
+                                </li>
+                            </ul>
+                            <div class="p-2">
+                                <a href="#"
+                                    class="flex items-center px-4 py-2 text-sm text-textWhite hover:shadow-lg transition  bg-softRed rounded-lg">
+                                    <span class="material-icons">logout</span>
+                                    <span class="ml-2">Çıkış Yap</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="p-6 bg-gray-100 relative -z-[1]">
+                <div class="w-full">
+                    <div class="relative ">
+                        <div class="mx-auto w-full">
+                            <div>
+                                <div class="flex flex-wrap">
+                                    <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                                        <div
+                                            class="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
+                                            <div class="flex-auto p-4">
+                                                <div class="flex flex-wrap">
+                                                    <div
+                                                        class="relative text-left w-full pr-4 max-w-full flex-grow flex-1">
+                                                        <h5 class="text-blueGray-400 uppercase font-bold text-xs">
+                                                            Traffic</h5>
+                                                        <span class="font-bold text-xl">350,897</span>
+                                                    </div>
+                                                    <div class="relative w-auto pl-4 flex-initial">
+                                                        <div
+                                                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-softRed">
+                                                            <span class="material-icons">bar_chart</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-sm text-left text-blueGray-500 mt-4"><span
+                                                        class="text-emerald-500 mr-2"><i class="fas fa-arrow-up"></i>
+                                                        3.48%</span><span class="whitespace-nowrap">Since last
+                                                        month</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                                        <div
+                                            class="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
+                                            <div class="flex-auto p-4">
+                                                <div class="flex flex-wrap">
+                                                    <div
+                                                        class="relative text-left w-full pr-4 max-w-full flex-grow flex-1">
+                                                        <h5 class="text-blueGray-400 uppercase font-bold text-xs">NEW
+                                                            USERS</h5>
+                                                        <span class="font-bold text-xl">2,356</span>
+                                                    </div>
+                                                    <div class="relative w-auto pl-4 flex-initial">
+                                                        <div
+                                                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-sky">
+                                                            <span class="material-icons">pie_chart</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-sm text-left text-blueGray-500 mt-4"><span
+                                                        class="text-red-500 mr-2"><i class="fas fa-arrow-down"></i>
+                                                        3.48%</span><span class="whitespace-nowrap">Since last
+                                                        week</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                                        <div
+                                            class="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
+                                            <div class="flex-auto p-4">
+                                                <div class="flex flex-wrap">
+                                                    <div
+                                                        class="relative text-left w-full pr-4 max-w-full flex-grow flex-1">
+                                                        <h5 class="text-blueGray-400 uppercase font-bold text-xs">SALES
+                                                        </h5>
+                                                        <span class="font-bold text-xl">924</span>
+                                                    </div>
+                                                    <div class="relative w-auto pl-4 flex-initial">
+                                                        <div
+                                                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-400">
+                                                            <span class="material-icons">group</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-sm text-left text-blueGray-500 mt-4"><span
+                                                        class="text-orange-500 mr-2"><i class="fas fa-arrow-down"></i>
+                                                        1.10%</span><span class="whitespace-nowrap">Since
+                                                        yesterday</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+                                        <div
+                                            class="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
+                                            <div class="flex-auto p-4">
+                                                <div class="flex flex-wrap">
+                                                    <div
+                                                        class="relative text-left w-full pr-4 max-w-full flex-grow flex-1">
+                                                        <h5 class="text-blueGray-400 uppercase font-bold text-xs">
+                                                            PERFORMANCE</h5>
+                                                        <span class="font-bold text-xl">49,65%</span>
+                                                    </div>
+                                                    <div class="relative w-auto pl-4 flex-initial">
+                                                        <div
+                                                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-cyan-400">
+                                                            <span class="material-icons">percent</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-sm text-left text-blueGray-500 mt-4"><span
+                                                        class="text-emerald-500 mr-2"><i class="fas fa-arrow-up"></i>
+                                                        12%</span><span class="whitespace-nowrap">Since last
+                                                        month</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const routes = {
+            '/dashboard': 'dashboard',
+            '/search-job': 'search-job',
+            '/applications': 'applications',
+            '/message': 'message',
+            '/statistics': 'statistics',
+            '/news': 'news'
+        };
+
+        const currentPath = window.location.pathname;
+        const activeRoute = routes[currentPath];
+
+        if (activeRoute) {
+            document.getElementById(activeRoute).classList.add('#0437b7');
+        }
+
+        function toggleActive(element) {
+            // Tüm linklerden 'active' sınıfını kaldır
+            document.querySelectorAll('.nav-item a').forEach((el) => {
+                el.classList.remove('active-item');
+            });
+
+            // Seçilen linke 'active' sınıfını ekle
+            element.classList.add('active-item');
+        }
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('w-[300px]');
+            sidebar.classList.toggle('w-[120px]');
+            sidebar.classList.toggle('mini-sidebar');
+
+            const textElements = sidebar.querySelectorAll('.text-lg');
+            textElements.forEach(el => {
+                if (sidebar.classList.contains('mini-sidebar')) {
+                    el.classList.add('hidden'); // Mini sidebar açıkken metinleri gizle
+                } else {
+                    el.classList.remove('hidden'); // Geniş görünümde metinleri göster
+                }
+            });
+        }
+        function toggleProfileDropdown() {
+            const dropdownMenu = document.getElementById('dropdownInformation');
+            dropdownMenu.classList.toggle('hidden'); // Menü görünürlüğünü toggle yapar
+        }
+        function toggleDropdown() {
+            const dropdown = document.getElementById('notificationDropdown');
+            dropdown.classList.toggle('hidden'); // Menü görünürlüğünü aç/kapa yapar
+        }
+    </script>
+</body>
+
+</html>
