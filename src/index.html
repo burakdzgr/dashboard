@@ -1,172 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jobie Dashboard</title>
-    <link href="/dist/output.css" rel="stylesheet" />
-    <link href="./assets/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
 
-  <body class="bg-mainGray">
-    <div class="flex h-full bg-gray-100">
-      <!-- Sidebar -->
-      <aside id="sidebar" class="w-[300px] h-screen bg-white text-white flex flex-col z-0 transition-width duration-300 border-r border-mainBorderColor">
-        <!-- Logo Bölümü -->
-        <div class="flex items-center justify-center p-4">
-          <a href="#" class="block">
-            <img src="./assets/images/logo.png" alt="" class="w-[240px] h-full object-cover" />
-          </a>
-        </div>
-        <!-- Navigasyon Menüsü -->
-        <nav class="flex-1 p-6 space-y-2 border-t border-t-mainBorderColor/40">
-          <ul class="space-y-4">
-            <li class="nav-item group transition">
-              <a href="#" class="masked-radius relative flex items-center space-x-4 w-full text-textColor rounded-2xl p-3 active-item" onclick="toggleActive(this)">
-                <span class="material-icons text-xl list-item-icon">home</span>
-                <span class="list-item-text text-base font-medium group-hover:translate-x-1 transition whitespace-nowrap">Gösterge Paneli</span>
-              </a>
-            </li>
-            <li class="nav-item group transition">
-              <a href="#" class="masked-radius relative flex items-center space-x-4 w-full justify-start text-textColor rounded-lg p-3" onclick="toggleActive(this)">
-                <span class="material-icons text-xl list-item-icon">photo_camera</span>
-                <span class="text-base font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Ürünlerim</span>
-              </a>
-            </li>
-            <li class="nav-item group transition">
-              <a href="#" class="masked-radius relative flex items-center space-x-4 w-full justify-start text-textColor rounded-lg p-3" onclick="toggleActive(this)">
-                <span class="material-icons text-xl list-item-icon">help_outline</span>
-                <span class="text-base font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Destek Taleplerim</span>
-              </a>
-            </li>
-            <li class="nav-item group transition">
-              <a href="#" class="masked-radius relative flex items-center space-x-4 w-full justify-start text-textColor rounded-lg p-3" onclick="toggleActive(this)">
-                <span class="material-icons text-xl list-item-icon">article</span>
-                <span class="text-base font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Sözleşmeler</span>
-              </a>
-            </li>
-            <li class="nav-item group transition">
-              <a href="#" class="masked-radius relative flex items-center space-x-4 w-full justify-start text-textColor rounded-lg p-3" onclick="toggleActive(this)">
-                <span class="material-icons text-xl list-item-icon">location_on</span>
-                <span class="text-base font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">İletişim</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="sidebar-bottom-card mx-auto mb-10 w-full max-w-60 text-center shadow-lg hover:shadow-xl transition p-4 rounded-lg relative">
-          <div class="flex items-center mb-5 sidebar-bottom">
-            <h2 class="max-w-40 font-extrabold sidebar-bottom-card-title text-textColor">Yardıma mı ihtiyacın var ?</h2>
-            <div class="sidebar-bottom-card-icon absolute -top-4 -right-4">
-              <img src="/src/assets/images/help.png" alt="Rocket with piggy bank" class="w-20 h-20" />
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobie Dashboard</title>
+  <link href="/dist/output.css" rel="stylesheet" />
+  <link href="./assets/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-mainGray">
+  <div class="flex h-full bg-gray-100">
+    <!-- Sidebar -->
+    <aside id="sidebar"
+      class="w-[300px] h-screen bg-white text-white flex flex-col z-0 transition-width duration-300 border-r border-mainBorderColor">
+      <!-- Logo Bölümü -->
+      <div class="flex items-center justify-center p-4">
+        <a href="#" class="block">
+          <img src="./assets/images/logo.png" alt="" class="w-[240px] h-full object-cover" />
+        </a>
+      </div>
+      <!-- Navigasyon Menüsü -->
+      <nav class="flex-1 p-6 space-y-2 border-t border-t-mainBorderColor/40">
+        <ul class="space-y-4">
+          <li class="nav-item group transition">
+            <a href="#"
+              class="masked-radius relative flex items-center space-x-4 w-full text-textColor rounded-2xl p-3 active-item"
+              onclick="toggleActive(this)">
+              <span class="material-icons text-xl list-item-icon">home</span>
+              <span
+                class="list-item-text text-base font-medium group-hover:translate-x-1 transition whitespace-nowrap">Gösterge
+                Paneli</span>
+            </a>
+          </li>
+          <li class="nav-item group transition">
+            <a href="#"
+              class="masked-radius relative flex items-center space-x-4 w-full justify-start text-textColor rounded-lg p-3"
+              onclick="toggleActive(this)">
+              <span class="material-icons text-xl list-item-icon">photo_camera</span>
+              <span
+                class="text-base font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Ürünlerim</span>
+            </a>
+          </li>
+          <li class="nav-item group transition">
+            <a href="#"
+              class="masked-radius relative flex items-center space-x-4 w-full justify-start text-textColor rounded-lg p-3"
+              onclick="toggleActive(this)">
+              <span class="material-icons text-xl list-item-icon">help_outline</span>
+              <span
+                class="text-base font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Destek
+                Taleplerim</span>
+            </a>
+          </li>
+          <li class="nav-item group transition">
+            <a href="#"
+              class="masked-radius relative flex items-center space-x-4 w-full justify-start text-textColor rounded-lg p-3"
+              onclick="toggleActive(this)">
+              <span class="material-icons text-xl list-item-icon">article</span>
+              <span
+                class="text-base font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">Sözleşmeler</span>
+            </a>
+          </li>
+          <li class="nav-item group transition">
+            <a href="#"
+              class="masked-radius relative flex items-center space-x-4 w-full justify-start text-textColor rounded-lg p-3"
+              onclick="toggleActive(this)">
+              <span class="material-icons text-xl list-item-icon">location_on</span>
+              <span
+                class="text-base font-medium group-hover:translate-x-1 transition list-item-text whitespace-nowrap">İletişim</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="sidebar-bottom-card mx-auto mb-10 w-full max-w-60 text-center shadow-lg hover:shadow-xl transition p-4 rounded-lg relative">
+        <div class="flex items-center mb-5 sidebar-bottom">
+          <h2 class="max-w-40 font-extrabold sidebar-bottom-card-title text-textColor">Yardıma mı ihtiyacın var ?</h2>
+          <div class="sidebar-bottom-card-icon absolute -top-4 -right-4">
+            <img src="/src/assets/images/help.png" alt="Rocket with piggy bank" class="w-20 h-20" />
           </div>
-          <a href="#" target="_blank" rel="nofollow" class="w-full flex items-center rounded-md bg-black px-4 py-2 text-sm text-white hover:bg-opacity-95 border border-mainBorderColor">
-            <span class="sidebar-bottom-button-icon material-icons mr-2">near_me </span>
-            <span class="sidebar-bottom-button-text mt-0.5 whitespace-nowrap font-extrabold">Destek Talebi Oluştur</span>
-          </a>
         </div>
-      </aside>
+        <a href="#" target="_blank" rel="nofollow"
+          class="w-full flex items-center rounded-md bg-black px-4 py-2 text-sm text-white hover:bg-opacity-95 border border-mainBorderColor">
+          <span class="sidebar-bottom-button-icon material-icons mr-2">near_me </span>
+          <span class="sidebar-bottom-button-text mt-0.5 whitespace-nowrap font-extrabold">Destek Talebi Oluştur</span>
+        </a>
+      </div>
+    </aside>
 
-      <!-- Main Content -->
-      <main class="flex-1 overflow-y-auto z-10">
-        <header class="sticky top-0 bg-[#fff] border-b border-mainBorderColor p-6 flex justify-between items-center">
-          <!-- Hamburger Menü İkonu -->
-          <button id="menuButton" class="material-icons text-3xl cursor-pointer" onclick="toggleSidebar()">menu</button>
-          <div class="flex items-center space-x-4">
-            <div class="notifications-box relative">
-              <!-- Notification Button -->
-              <button type="button" onclick="toggleDropdown()" class="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg border border-mainBorderColor focus:outline-none">
-                <span class="material-icons text-textColor">notifications</span>
-                <span class="sr-only">Notifications</span>
-                <div class="absolute inline-flex items-center justify-center w-6 h-6 text-minimal font-bold text-[#fff] bg-softRed border-2 border-mainBorderColor rounded-full -top-2 -right-2">20</div>
-              </button>
-              <div id="notificationDropdown" class="hidden absolute right-0 mt-2 min-w-96 bg-[#fff] border border-mainBorderColor rounded-lg shadow-lg z-10">
-                <ul class="py-2 text-sm text-gray-700 overflow-y-auto max-h-[250px] custom-scrollbar">
-                  <li>
-                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
-                      <div class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
-                        <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover" alt="Bordered rounded avatar" />
-                      </div>
-                      <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
-                      <div class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
-                        <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover" alt="Bordered rounded avatar" />
-                      </div>
-                      <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
-                      <div class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
-                        <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover" alt="Bordered rounded avatar" />
-                      </div>
-                      <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
-                      <div class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
-                        <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover" alt="Bordered rounded avatar" />
-                      </div>
-                      <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
-                      <div class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
-                        <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover" alt="Bordered rounded avatar" />
-                      </div>
-                      <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="profile-box relative">
-              <button id="dropdownInformationButton" class="hover:bg-mainHoverGray transition focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button" onclick="toggleProfileDropdown()">
-                <div class="relative w-10 h-10 bg-sky-100 border-2 border-solid border-sky flex justify-center items-center rounded-full overflow-hidden">
-                  <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/3.jpg" alt="Bordered rounded avatar" class="rounded-full overflow-hidden" />
-                </div>
-                <span class="ml-2">Burak Dizieğri</span>
-                <span class="material-icons">expand_more</span>
-              </button>
-
-              <div id="dropdownInformation" class="z-50 hidden bg-[#fff] divide-y divide-mainBorderColor rounded-lg shadow w-44 absolute right-0 top-[50px]">
-                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                  <div>Bonnie Green</div>
-                  <div class="font-medium truncate">name@flowbite.com</div>
-                </div>
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Profilim</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Ayarlarım</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Taleplerim</a>
-                  </li>
-                </ul>
-                <div class="p-2">
-                  <a href="#" class="flex items-center px-4 py-2 text-sm text-textWhite hover:shadow-lg transition bg-softRed rounded-lg">
-                    <span class="material-icons">logout</span>
-                    <span class="ml-2">Çıkış Yap</span>
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto z-10">
+      <header class="sticky top-0 bg-[#fff] border-b border-mainBorderColor p-6 flex justify-between items-center">
+        <!-- Hamburger Menü İkonu -->
+        <button id="menuButton" class="material-icons text-3xl cursor-pointer" onclick="toggleSidebar()">menu</button>
+        <div class="flex items-center space-x-4">
+          <div class="notifications-box relative">
+            <!-- Notification Button -->
+            <button type="button" onclick="toggleDropdown()"
+              class="relative inline-flex items-center p-3 text-sm font-medium text-center text-white rounded-lg border border-mainBorderColor focus:outline-none">
+              <span class="material-icons text-textColor">notifications</span>
+              <span class="sr-only">Notifications</span>
+              <div
+                class="absolute inline-flex items-center justify-center w-6 h-6 text-minimal font-bold text-[#fff] bg-softRed border-2 border-mainBorderColor rounded-full -top-2 -right-2">
+                20</div>
+            </button>
+            <div id="notificationDropdown"
+              class="hidden absolute right-0 mt-2 min-w-96 bg-[#fff] border border-mainBorderColor rounded-lg shadow-lg z-10">
+              <ul class="py-2 text-sm text-gray-700 overflow-y-auto max-h-[250px] custom-scrollbar">
+                <li>
+                  <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                    <div
+                      class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
+                      <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover"
+                        alt="Bordered rounded avatar" />
+                    </div>
+                    <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme
+                      yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
                   </a>
-                </div>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                    <div
+                      class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
+                      <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover"
+                        alt="Bordered rounded avatar" />
+                    </div>
+                    <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme
+                      yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                    <div
+                      class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
+                      <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover"
+                        alt="Bordered rounded avatar" />
+                    </div>
+                    <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme
+                      yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                    <div
+                      class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
+                      <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover"
+                        alt="Bordered rounded avatar" />
+                    </div>
+                    <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme
+                      yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="flex items-center px-4 py-2 hover:bg-mainHoverGray">
+                    <div
+                      class="relative w-8 h-8 bg-sky-100 border-2 border-solid border-sky flex justify-center shrink-0 mr-2.5 items-center rounded-full">
+                      <img src="https://pagedone.io/asset/uploads/1704277384.png" class="w-4 h-4 object-cover"
+                        alt="Bordered rounded avatar" />
+                    </div>
+                    <span class="notification-message-text text-textColor text-left">Dış çekim görselleriniz sisteme
+                      yüklenmiştir. Görüntülemek için <strong class="mr-1 underline">buraya</strong> tıklayınız</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile-box relative">
+            <button id="dropdownInformationButton"
+              class="hover:bg-mainHoverGray transition focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+              type="button" onclick="toggleProfileDropdown()">
+              <div
+                class="relative w-10 h-10 bg-sky-100 border-2 border-solid border-sky flex justify-center items-center rounded-full overflow-hidden">
+                <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/3.jpg"
+                  alt="Bordered rounded avatar" class="rounded-full overflow-hidden" />
+              </div>
+              <span class="ml-2">Burak Dizieğri</span>
+              <span class="material-icons">expand_more</span>
+            </button>
+
+            <div id="dropdownInformation"
+              class="z-50 hidden bg-[#fff] divide-y divide-mainBorderColor rounded-lg shadow w-44 absolute right-0 top-[50px]">
+              <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                <div>Bonnie Green</div>
+                <div class="font-medium truncate">name@flowbite.com</div>
+              </div>
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Profilim</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Ayarlarım</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 hover:bg-mainHoverGray">Taleplerim</a>
+                </li>
+              </ul>
+              <div class="p-2">
+                <a href="#"
+                  class="flex items-center px-4 py-2 text-sm text-textWhite hover:shadow-lg transition bg-softRed rounded-lg">
+                  <span class="material-icons">logout</span>
+                  <span class="ml-2">Çıkış Yap</span>
+                </a>
               </div>
             </div>
           </div>
-        </header>
-        <section class="p-6 bg-gray-100 relative -z-[1]">
-          <div class="main-wrapper grid grid-cols-12 gap-4">
-            <div class="main-left-content col-span-9">
-              <div class="w-full">
-                <!-- <div class="main-banner-wrapper mb-8 relative">
+        </div>
+      </header>
+      <section class="p-6 bg-gray-100 relative -z-[1]">
+        <div class="main-wrapper grid grid-cols-12 gap-4">
+          <div class="main-left-content col-span-9">
+            <div class="w-full">
+              <!-- <div class="main-banner-wrapper mb-8 relative">
                   <div class="banner-text text-left p-6 h-full w-2/3 flex flex-col justify-center">
                     <h1 class="text-4xl banner-title text-white font-bold mb-6">Kaliteli Fotoğraf Çekimleri için Güvenilir Adresiniz</h1>
                     <span class="banner-subtext text-white mb-8">İç ve dış mekan çekimlerinin en iyi karelerini keşfedin.</span>
@@ -175,354 +221,420 @@
                     </div>
                   </div>
                 </div> -->
-                <div class="relative">
-                  <div class="grid grid-cols-12 gap-4 mb-5">
-                    <!-- Personal Card -->
-                    <div class="bg-white rounded-lg shadow p-6 col-span-7">
-                      <div class="profile-main-card grid grid-cols-12 gap-4">
-                        <div class="flex items-center mb-4 col-span-4 whitespace-nowrap flex-shrink-0 w-44 h-44">
-                          <img src="https://t4.ftcdn.net/jpg/06/48/39/19/360_F_648391979_uMz6EwAlKNIJnK9r46UpTiM17nT8GuLl.jpg" alt="Profile" class="w-full h-full border-2 border-white flex-shrink-0 relative rounded-full object-cover" />
+              <div class="relative">
+                <div class="grid grid-cols-12 gap-4 mb-5">
+                  <!-- Personal Card -->
+                  <div class="bg-white rounded-lg shadow p-6 col-span-7">
+                    <div class="profile-main-card grid grid-cols-12 gap-4">
+                      <div class="flex items-center mb-4 col-span-4 whitespace-nowrap flex-shrink-0 w-44 h-44">
+                        <img
+                          src="https://t4.ftcdn.net/jpg/06/48/39/19/360_F_648391979_uMz6EwAlKNIJnK9r46UpTiM17nT8GuLl.jpg"
+                          alt="Profile"
+                          class="w-full h-full border-2 border-white flex-shrink-0 relative rounded-full object-cover" />
+                      </div>
+                      <div class="text-sm col-span-8">
+                        <div class="mb-4">
+                          <h2 class="text-lg font-bold mb-2">Fotoğrafçınız, Burak Dizieğri</h2>
+                          <p class="text-sm text-textColor">Fotoğrafçınız ile ilgili problem yaşıyorsanız lütfen bize
+                            bildirin</p>
                         </div>
-                        <div class="text-sm col-span-8">
-                          <div class="mb-4">
-                            <h2 class="text-lg font-bold mb-2">Fotoğrafçınız, Burak Dizieğri</h2>
-                            <p class="text-sm text-textColor">Fotoğrafçınız ile ilgili problem yaşıyorsanız lütfen bize bildirin</p>
-                          </div>
-                          <ul class="profile-infos grid grid-cols-2 grid-rows-2">
-                            <li class="flex flex-col items-start">
-                              <div class="flex items-center">
-                                <span class="material-icons !text-[18px] mr-1">schedule</span>
-                                <strong class="mr-2">Çalışma Süresi:</strong>
-                              </div>
-                              <p class="p-2 flex flex-col items-center text-textColor font-semibold">+5 Yıl</p>
-                            </li>
-                            <li class="flex flex-col items-start">
-                              <div class="flex items-center">
-                                <span class="material-icons !text-[18px] mr-1">calendar_month</span>
-                                <strong class="mr-2">Rezervasyon Tarihi:</strong>
-                              </div>
-                              <p class="p-2 flex flex-col items-center text-textColor font-semibold">17.11.2024</p>
-                            </li>
-                            <li class="flex flex-col items-start">
-                              <div class="flex items-center">
-                                <span class="material-icons !text-[18px] mr-1">call</span>
-                                <strong class="mr-2">Telefon:</strong>
-                              </div>
-                              <p class="p-2 flex flex-col items-center text-textColor font-semibold">0541 907 34 18</p>
-                            </li>
-                            <li class="flex flex-col items-start">
-                              <div class="flex items-center">
-                                <span class="material-icons !text-[18px] mr-1">alternate_email</span>
-                                <strong class="mr-2">E-Posta:</strong>
-                              </div>
-                              <p class="p-2 flex flex-col items-center text-textColor font-semibold">burakdiziegriimp@gmail.com</p>
-                            </li>
-                          </ul>
-                        </div>
+                        <ul class="profile-infos grid grid-cols-2 grid-rows-2">
+                          <li class="flex flex-col items-start">
+                            <div class="flex items-center">
+                              <span class="material-icons !text-[18px] mr-1">schedule</span>
+                              <strong class="mr-2">Çalışma Süresi:</strong>
+                            </div>
+                            <p class="p-2 flex flex-col items-center text-textColor font-semibold">+5 Yıl</p>
+                          </li>
+                          <li class="flex flex-col items-start">
+                            <div class="flex items-center">
+                              <span class="material-icons !text-[18px] mr-1">calendar_month</span>
+                              <strong class="mr-2">Rezervasyon Tarihi:</strong>
+                            </div>
+                            <p class="p-2 flex flex-col items-center text-textColor font-semibold">17.11.2024</p>
+                          </li>
+                          <li class="flex flex-col items-start">
+                            <div class="flex items-center">
+                              <span class="material-icons !text-[18px] mr-1">call</span>
+                              <strong class="mr-2">Telefon:</strong>
+                            </div>
+                            <p class="p-2 flex flex-col items-center text-textColor font-semibold">0541 907 34 18</p>
+                          </li>
+                          <li class="flex flex-col items-start">
+                            <div class="flex items-center">
+                              <span class="material-icons !text-[18px] mr-1">alternate_email</span>
+                              <strong class="mr-2">E-Posta:</strong>
+                            </div>
+                            <p class="p-2 flex flex-col items-center text-textColor font-semibold">
+                              burakdiziegriimp@gmail.com</p>
+                          </li>
+                        </ul>
                       </div>
                     </div>
+                  </div>
 
-                    <!-- Guide Views Cards -->
-                    <div class="col-span-5">
-                      <div class="grid grid-cols-12 gap-3">
-                        <div class="w-full col-span-6 h-full">
-                          <div class="bg-white text-gray-800 h-full rounded-lg shadow p-6 grid grid-cols-12">
-                            <div class="dashboard-card-icon col-span-4 bg-softRed/20 flex items-center justify-center w-8 h-8 rounded-lg p-5">
-                              <span class="material-icons !text-3xl !text-softRed"> photo_camera </span>
-                            </div>
-                            <div class="col-span-8">
-                              <h2 class="text-2xl font-bold mb-2">İç Çekim</h2>
-                              <p class="text-sm text-gray-500">Satın Alınmadı</p>
-                            </div>
+                  <!-- Guide Views Cards -->
+                  <div class="col-span-5">
+                    <div class="grid grid-cols-12 gap-3">
+                      <div class="w-full col-span-6 h-full">
+                        <div class="bg-white text-gray-800 h-full rounded-lg shadow p-6 grid grid-cols-12">
+                          <div
+                            class="dashboard-card-icon col-span-4 !bg-customGray flex items-center justify-center w-8 h-8 rounded-lg p-5">
+                            <span class="material-icons !text-3xl !text-customBlack"> photo_camera </span>
+                          </div>
+                          <div class="col-span-8">
+                            <h2 class="text-2xl font-bold mb-2">İç Çekim</h2>
+                            <p class="text-sm text-gray-500">Satın Alınmadı</p>
                           </div>
                         </div>
-                        <div class="w-full col-span-6 h-full">
-                          <div class="bg-white text-gray-800 h-full rounded-lg shadow p-6 grid grid-cols-12">
-                            <div class="dashboard-card-icon col-span-4 bg-indigo-200 flex items-center justify-center w-8 h-8 rounded-lg p-5">
-                              <span class="material-icons !text-3xl !text-indigo-900"> photo_camera </span>
-                            </div>
-                            <div class="col-span-8">
-                              <h2 class="text-2xl font-bold mb-2">Dış Çekim</h2>
-                              <p class="text-sm">Ürününüz Hazır! <strong class="underline cursor-pointer">Hemen Gör</strong></p>
-                            </div>
+                      </div>
+                      <div class="w-full col-span-6 h-full">
+                        <div class="bg-white text-gray-800 h-full rounded-lg shadow p-6 grid grid-cols-12">
+                          <div
+                            class="dashboard-card-icon col-span-4 !bg-customGray flex items-center justify-center w-8 h-8 rounded-lg p-5">
+                            <span class="material-icons !text-3xl !text-customBlack"> photo_camera </span>
+                          </div>
+                          <div class="col-span-8">
+                            <h2 class="text-2xl font-bold mb-2">Dış Çekim</h2>
+                            <p class="text-sm">Ürününüz Hazır! <strong class="underline cursor-pointer">Hemen
+                                Gör</strong></p>
                           </div>
                         </div>
-                        <div class="w-full col-span-12">
-                          <div class="bg-white text-gray-800 rounded-lg shadow p-6 grid grid-cols-12 text-left">
-                            <div class="dashboard-card-icon col-span-2 !bg-[#bdc3c7] flex items-center justify-center w-8 h-8 rounded-lg p-5">
-                              <span class="material-icons !text-3xl !text-customBlack"> photo_camera </span>
-                            </div>
-                            <div class="col-span-10 text-left">
-                              <h2 class="text-2xl font-bold mb-2">İç & Dış Çekim</h2>
-                              <p class="text-sm text-gray-500">Satın Alınmadı</p>
-                            </div>
+                      </div>
+                      <div class="w-full col-span-12">
+                        <div class="bg-white text-gray-800 rounded-lg shadow p-6 grid grid-cols-12 text-left">
+                          <div
+                            class="dashboard-card-icon col-span-2 !bg-customGray flex items-center justify-center w-8 h-8 rounded-lg p-5">
+                            <span class="material-icons !text-3xl !text-customBlack"> photo_camera </span>
+                          </div>
+                          <div class="col-span-10 text-left">
+                            <h2 class="text-2xl font-bold mb-2">İç & Dış Çekim</h2>
+                            <p class="text-sm text-gray-500">Satın Alınmadı</p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="grid grid-cols-3 gap-4">
-                    <!-- Contacts Section -->
-                    <div class="bg-white rounded-lg shadow p-4 flex flex-col justify-between max-w-2xl">
-                      <div class="flex items-center justify-between">
-                        <h2 class="text-lg font-semibold">Çekim Grubu</h2>
-                        <button class="bg-purple-500 text-white p-2 rounded-lg hover:bg-purple-600">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                          </svg>
+                </div>
+                <div class="grid grid-cols-3 gap-4">
+                  <!-- Contacts Section -->
+                  <div class="bg-white rounded-lg shadow p-4 flex flex-col justify-between max-w-2xl">
+                    <div class="flex items-center justify-between">
+                      <h2 class="text-lg font-semibold">Çekim Grubu</h2>
+                      <button class="!bg-customBlack text-white p-2 rounded-lg ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                      </button>
+                    </div>
+                    <p class="text-sm text-gray-500">Bu gruba ait <span class="font-bold text-gray-800">5</span> öğrenci
+                      bulunuyor</p>
+                    <ul class="group-list mt-4 space-y-4">
+                      <!-- Contact Item -->
+                      <li class="flex items-center justify-between space-x-4">
+                        <div class="flex items-center space-x-4">
+                          <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/5.jpg"
+                            alt="Contact" class="w-12 h-12 rounded-full" />
+                          <div>
+                            <h3 class="font-semibold">Ayşe Dalman</h3>
+                            <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
+                          </div>
+                        </div>
+                        <button class="ml-auto !text-customBlack hover:text-customGray">
+                          <span class="material-icons text-base">close</span>
                         </button>
-                      </div>
-                      <p class="text-sm text-gray-500">Bu gruba ait <span class="font-bold text-gray-800">5</span> öğrenci bulunuyor</p>
-                      <ul class="group-list mt-4 space-y-4">
-                        <!-- Contact Item -->
-                        <li class="flex items-center justify-between space-x-4">
-                          <div class="flex items-center space-x-4">
-                            <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/5.jpg" alt="Contact" class="w-12 h-12 rounded-full" />
-                            <div>
-                              <h3 class="font-semibold">Ayşe Dalman</h3>
-                              <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
-                            </div>
+                      </li>
+                      <li class="flex items-center justify-between space-x-4">
+                        <div class="flex items-center space-x-4">
+                          <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/2.jpg"
+                            alt="Contact" class="w-12 h-12 rounded-full" />
+                          <div>
+                            <h3 class="font-semibold">Buse Kopar</h3>
+                            <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
                           </div>
-                          <button class="ml-auto text-customBlack hover:text-customGray">
-                            <span class="material-icons text-base">close</span>
-                          </button>
-                        </li>
-                        <li class="flex items-center justify-between space-x-4">
-                          <div class="flex items-center space-x-4">
-                            <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/2.jpg" alt="Contact" class="w-12 h-12 rounded-full" />
-                            <div>
-                              <h3 class="font-semibold">Buse Kopar</h3>
-                              <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
-                            </div>
+                        </div>
+                        <button class="ml-auto text-customBlack hover:text-customGray">
+                          <span class="material-icons text-base">close</span>
+                        </button>
+                      </li>
+                      <li class="flex items-center justify-between space-x-4">
+                        <div class="flex items-center space-x-4">
+                          <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/3.jpg"
+                            alt="Contact" class="w-12 h-12 rounded-full" />
+                          <div>
+                            <h3 class="font-semibold">Aslan Akbey</h3>
+                            <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
                           </div>
-                          <button class="ml-auto text-customBlack hover:text-customGray">
-                            <span class="material-icons text-base">close</span>
-                          </button>
-                        </li>
-                        <li class="flex items-center justify-between space-x-4">
-                          <div class="flex items-center space-x-4">
-                            <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/3.jpg" alt="Contact" class="w-12 h-12 rounded-full" />
-                            <div>
-                              <h3 class="font-semibold">Aslan Akbey</h3>
-                              <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
-                            </div>
+                        </div>
+                        <button class="ml-auto text-customBlack hover:text-customGray">
+                          <span class="material-icons text-base">close</span>
+                        </button>
+                      </li>
+                      <li class="flex items-center justify-between space-x-4">
+                        <div class="flex items-center space-x-4">
+                          <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/4.jpg"
+                            alt="Contact" class="w-12 h-12 rounded-full" />
+                          <div>
+                            <h3 class="font-semibold">Murat Yerebakan</h3>
+                            <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
                           </div>
-                          <button class="ml-auto text-customBlack hover:text-customGray">
-                            <span class="material-icons text-base">close</span>
-                          </button>
-                        </li>
-                        <li class="flex items-center justify-between space-x-4">
-                          <div class="flex items-center space-x-4">
-                            <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/4.jpg" alt="Contact" class="w-12 h-12 rounded-full" />
-                            <div>
-                              <h3 class="font-semibold">Murat Yerebakan</h3>
-                              <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
-                            </div>
+                        </div>
+                        <button class="ml-auto text-customBlack hover:text-customGray">
+                          <span class="material-icons text-base">close</span>
+                        </button>
+                      </li>
+                      <li class="flex items-center justify-between space-x-4">
+                        <div class="flex items-center space-x-4">
+                          <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/1.jpg"
+                            alt="Contact" class="w-12 h-12 rounded-full" />
+                          <div>
+                            <h3 class="font-semibold">Hakan Daloğlu</h3>
+                            <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
                           </div>
-                          <button class="ml-auto text-customBlack hover:text-customGray">
-                            <span class="material-icons text-base">close</span>
-                          </button>
-                        </li>
-                        <li class="flex items-center justify-between space-x-4">
-                          <div class="flex items-center space-x-4">
-                            <img src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/1.jpg" alt="Contact" class="w-12 h-12 rounded-full" />
-                            <div>
-                              <h3 class="font-semibold">Hakan Daloğlu</h3>
-                              <p class="text-sm text-gray-500">İnşaat Fakültesi / 0541 907 34 18</p>
-                            </div>
-                          </div>
-                          <button class="ml-auto text-customBlack hover:text-customGray">
-                            <span class="material-icons text-base">close</span>
-                          </button>
-                        </li>
+                        </div>
+                        <button class="ml-auto text-customBlack hover:text-customGray">
+                          <span class="material-icons text-base">close</span>
+                        </button>
+                      </li>
 
-                        <!-- Repeat Contact Item as Needed -->
-                      </ul>
-                      <!-- <button class="mt-4 w-full bg-purple-500/50 text-white py-2 rounded-lg hover:bg-purple-600 transition">View More</button> -->
+                      <!-- Repeat Contact Item as Needed -->
+                    </ul>
+                    <!-- <button class="mt-4 w-full bg-purple-500/50 text-white py-2 rounded-lg hover:bg-purple-600 transition">View More</button> -->
+                  </div>
+
+                  <!-- Recent Emails Section -->
+
+                  <div class="col-span-2 relative overflow-x-auto shadow sm:rounded-lg bg-white h-full">
+                    <div class="flex items-start justify-between mb-4 p-4">
+                      <div class="">
+                        <h2 class="text-lg font-semibold mb-2">İstek & Talepler</h2>
+                        <p class="text-sm text-gray-500">Toplam <span class="font-bold text-gray-800">1</span> talep var
+                        </p>
+                      </div>
+                      <button class="!bg-customBlack text-white p-2 rounded-lg ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4">
+                          </path>
+                        </svg>
+                      </button>
                     </div>
 
-                    <!-- Recent Emails Section -->
-
-                    <div class="col-span-2 relative overflow-x-auto shadow sm:rounded-lg bg-white h-full">
-                      <div class="flex items-start justify-between mb-4 p-4">
-                        <div class="">
-                          <h2 class="text-lg font-semibold mb-2">İstek & Talepler</h2>
-                          <p class="text-sm text-gray-500">Toplam <span class="font-bold text-gray-800">1</span> talep var</p>
-                        </div>
-                        <button class="bg-purple-500 text-white p-2 rounded-lg hover:bg-purple-600">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                          </svg>
-                        </button>
-                      </div>
-
-                      <!-- Emails Table -->
-                      <div class="overflow-x-auto">
-                        <table class="min-w-full table-auto border-collapse">
-                          <tbody>
-                            <!-- Email Row -->
-                            <tr class="border-b hover:bg-gray-50 flex transition">
-                              <td class="px-4 py-3">
-                                <span class="material-icons bg-yellow-200 p-2 rounded-lg text-yellow-500 cursor-pointer hover:text-yellow-600"> star </span>
-                              </td>
-                              <td class="px-4 py-3 text-sm text-gray-700">
-                                <div>
-                                  <p class="font-semibold text-gray-800 text-base mb-1">Fotoğrafçı Değişikliği Talebi</p>
-                                  <p class="text-textColor text-sm">Projelerimizde mevcut fotoğrafçı yerine farklı bir fotoğrafçı ile devam etmek istiyoruz. Yeni fotoğrafçı seçiminde kalite ve zamanlama kriterlerine dikkat edilmesini rica ederiz. Gerekli düzenlemelerin yapılması konusunda bilgilendirme bekliyoruz.</p>
-                                </div>
-                              </td>
-                              <td class="px-4 py-3 text-right flex items-center gap-4">
-                                <button class="text-purple-500 hover:text-purple-700 transition" onclick="openModal('How to manage your working time')">
-                                  <span class="material-icons">visibility</span>
-                                </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <!-- Edit user modal -->
-                      <div id="editUserModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 items-center justify-center hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                        <div class="relative w-full max-w-2xl max-h-full">
-                          <!-- Modal content -->
-                          <form class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                            <!-- Modal header -->
-                            <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Edit user</h3>
-                              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="editUserModal">
-                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
+                    <!-- Emails Table -->
+                    <div class="overflow-x-auto">
+                      <table class="min-w-full table-auto border-collapse">
+                        <tbody>
+                          <!-- Email Row -->
+                          <tr class="border-b hover:bg-gray-50 flex transition">
+                            <td class="px-4 py-3">
+                              <span
+                                class="material-icons bg-yellow-200 p-2 rounded-lg text-yellow-500 cursor-pointer hover:text-yellow-600">
+                                star </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-gray-700">
+                              <div>
+                                <p class="font-semibold text-gray-800 text-base mb-1">Fotoğrafçı Değişikliği Talebi</p>
+                                <p class="text-textColor text-sm">Projelerimizde mevcut fotoğrafçı yerine farklı bir
+                                  fotoğrafçı ile devam etmek istiyoruz. Yeni fotoğrafçı seçiminde kalite ve zamanlama
+                                  kriterlerine dikkat edilmesini rica ederiz. Gerekli düzenlemelerin yapılması konusunda
+                                  bilgilendirme bekliyoruz.</p>
+                              </div>
+                            </td>
+                            <td class="px-4 py-3 text-right flex items-center gap-4">
+                              <button class="text-customGray hover:text-customBlack transition"
+                                onclick="openModal('How to manage your working time')">
+                                <span class="material-icons">visibility</span>
                               </button>
-                            </div>
-                            <!-- Modal body -->
-                            <div class="p-6 space-y-6">
-                              <div class="grid grid-cols-6 gap-6">
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="first-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
-                                  <input type="text" name="first-name" id="first-name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Bonnie" required="" />
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="last-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
-                                  <input type="text" name="last-name" id="last-name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Green" required="" />
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                                  <input type="email" name="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="example@company.com" required="" />
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="phone-number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
-                                  <input type="number" name="phone-number" id="phone-number" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="e.g. +(12)3456 789" required="" />
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="department" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Department</label>
-                                  <input type="text" name="department" id="department" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Development" required="" />
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company</label>
-                                  <input type="number" name="company" id="company" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="123456" required="" />
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="current-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Current Password</label>
-                                  <input type="password" name="current-password" id="current-password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••" required="" />
-                                </div>
-                                <div class="col-span-6 sm:col-span-3">
-                                  <label for="new-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New Password</label>
-                                  <input type="password" name="new-password" id="new-password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••" required="" />
-                                </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- Edit user modal -->
+                    <div id="editUserModal" tabindex="-1" aria-hidden="true"
+                      class="fixed top-0 left-0 right-0 z-50 items-center justify-center hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                      <div class="relative w-full max-w-2xl max-h-full">
+                        <!-- Modal content -->
+                        <form class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                          <!-- Modal header -->
+                          <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Edit user</h3>
+                            <button type="button"
+                              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                              data-modal-hide="editUserModal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                            </button>
+                          </div>
+                          <!-- Modal body -->
+                          <div class="p-6 space-y-6">
+                            <div class="grid grid-cols-6 gap-6">
+                              <div class="col-span-6 sm:col-span-3">
+                                <label for="first-name"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First
+                                  Name</label>
+                                <input type="text" name="first-name" id="first-name"
+                                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="Bonnie" required="" />
+                              </div>
+                              <div class="col-span-6 sm:col-span-3">
+                                <label for="last-name"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                                <input type="text" name="last-name" id="last-name"
+                                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="Green" required="" />
+                              </div>
+                              <div class="col-span-6 sm:col-span-3">
+                                <label for="email"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                                <input type="email" name="email" id="email"
+                                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="example@company.com" required="" />
+                              </div>
+                              <div class="col-span-6 sm:col-span-3">
+                                <label for="phone-number"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone
+                                  Number</label>
+                                <input type="number" name="phone-number" id="phone-number"
+                                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="e.g. +(12)3456 789" required="" />
+                              </div>
+                              <div class="col-span-6 sm:col-span-3">
+                                <label for="department"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Department</label>
+                                <input type="text" name="department" id="department"
+                                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="Development" required="" />
+                              </div>
+                              <div class="col-span-6 sm:col-span-3">
+                                <label for="company"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company</label>
+                                <input type="number" name="company" id="company"
+                                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="123456" required="" />
+                              </div>
+                              <div class="col-span-6 sm:col-span-3">
+                                <label for="current-password"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Current
+                                  Password</label>
+                                <input type="password" name="current-password" id="current-password"
+                                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="••••••••" required="" />
+                              </div>
+                              <div class="col-span-6 sm:col-span-3">
+                                <label for="new-password"
+                                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New
+                                  Password</label>
+                                <input type="password" name="new-password" id="new-password"
+                                  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="••••••••" required="" />
                               </div>
                             </div>
-                            <!-- Modal footer -->
-                            <div class="flex items-center p-6 space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b dark:border-gray-600">
-                              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save all</button>
-                            </div>
-                          </form>
-                        </div>
+                          </div>
+                          <!-- Modal footer -->
+                          <div
+                            class="flex items-center p-6 space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b dark:border-gray-600">
+                            <button type="submit"
+                              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save
+                              all</button>
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="main-left-content col-span-3">
-              <div class="bg-white shadow-md rounded-lg text-gray-900">
-                <div class="rounded-t-lg h-32 overflow-hidden">
-                  <img class="object-cover object-top w-full" src="https://images.litter-robot.com/media/magefan_blog/boris-debusscher-britishshorthair-copy.jpg" alt="Mountain" />
-                </div>
-                <div class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
-                  <img class="object-cover object-center h-32" src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/3.jpg" alt="Woman looking front" />
-                </div>
-                <div class="text-center p-4">
-                  <h2 class="font-semibold">Burak Dizieğri</h2>
-                  <p class="w-full flex items-center justify-center text-gray-500 mt-2">
-                    <span class="material-icons mr-2">alternate_email</span>
-                    burakdiziegriimp@gmail.com
-                  </p>
-                  <p class="w-full flex items-center justify-center text-gray-500 mt-2">
-                    <span class="material-icons mr-2">call</span>
-                    0541 907 34 18
-                  </p>
-                  <p class="w-full flex items-center justify-center text-gray-500 mt-2">
-                    <span class="material-icons mr-2">school</span>
-                    Alanya Aladdin Keykubat Üniversitesi
-                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </main>
-    </div>
+          <div class="main-left-content col-span-3">
+            <div class="bg-white shadow-md rounded-lg text-gray-900">
+              <div class="rounded-t-lg h-32 overflow-hidden">
+                <img class="object-cover object-top w-full"
+                  src="https://images.litter-robot.com/media/magefan_blog/boris-debusscher-britishshorthair-copy.jpg"
+                  alt="Mountain" />
+              </div>
+              <div class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
+                <img class="object-cover object-center h-32"
+                  src="https://wpthemebooster.com/demo/themeforest/html/kleon/assets/img/3.jpg"
+                  alt="Woman looking front" />
+              </div>
+              <div class="text-center p-4">
+                <h2 class="font-semibold">Burak Dizieğri</h2>
+                <p class="w-full flex items-center justify-center text-gray-500 mt-2">
+                  <span class="material-icons mr-2">alternate_email</span>
+                  burakdiziegriimp@gmail.com
+                </p>
+                <p class="w-full flex items-center justify-center text-gray-500 mt-2">
+                  <span class="material-icons mr-2">call</span>
+                  0541 907 34 18
+                </p>
+                <p class="w-full flex items-center justify-center text-gray-500 mt-2">
+                  <span class="material-icons mr-2">school</span>
+                  Alanya Aladdin Keykubat Üniversitesi
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 
-    <script>
-      const routes = {
-        "/dashboard": "dashboard",
-        "/search-job": "search-job",
-        "/applications": "applications",
-        "/message": "message",
-        "/statistics": "statistics",
-        "/news": "news",
-      };
+  <script>
+    const routes = {
+      "/dashboard": "dashboard",
+      "/search-job": "search-job",
+      "/applications": "applications",
+      "/message": "message",
+      "/statistics": "statistics",
+      "/news": "news",
+    };
 
-      const currentPath = window.location.pathname;
-      const activeRoute = routes[currentPath];
+    const currentPath = window.location.pathname;
+    const activeRoute = routes[currentPath];
 
-      if (activeRoute) {
-        document.getElementById(activeRoute).classList.add("#0437b7");
-      }
+    if (activeRoute) {
+      document.getElementById(activeRoute).classList.add("#0437b7");
+    }
 
-      function toggleActive(element) {
-        // Tüm linklerden 'active' sınıfını kaldır
-        document.querySelectorAll(".nav-item a").forEach((el) => {
-          el.classList.remove("active-item");
-        });
+    function toggleActive(element) {
+      // Tüm linklerden 'active' sınıfını kaldır
+      document.querySelectorAll(".nav-item a").forEach((el) => {
+        el.classList.remove("active-item");
+      });
 
-        // Seçilen linke 'active' sınıfını ekle
-        element.classList.add("active-item");
-      }
-      function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("w-[300px]");
-        sidebar.classList.toggle("w-[110px]");
-        sidebar.classList.toggle("mini-sidebar");
+      // Seçilen linke 'active' sınıfını ekle
+      element.classList.add("active-item");
+    }
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("w-[300px]");
+      sidebar.classList.toggle("w-[110px]");
+      sidebar.classList.toggle("mini-sidebar");
 
-        const textElements = sidebar.querySelectorAll(".text-lg");
-        textElements.forEach((el) => {
-          if (sidebar.classList.contains("mini-sidebar")) {
-            el.classList.add("hidden"); // Mini sidebar açıkken metinleri gizle
-          } else {
-            el.classList.remove("hidden"); // Geniş görünümde metinleri göster
-          }
-        });
-      }
-      function toggleProfileDropdown() {
-        const dropdownMenu = document.getElementById("dropdownInformation");
-        dropdownMenu.classList.toggle("hidden"); // Menü görünürlüğünü toggle yapar
-      }
-      function toggleDropdown() {
-        const dropdown = document.getElementById("notificationDropdown");
-        dropdown.classList.toggle("hidden"); // Menü görünürlüğünü aç/kapa yapar
-      }
-    </script>
-  </body>
+      const textElements = sidebar.querySelectorAll(".text-lg");
+      textElements.forEach((el) => {
+        if (sidebar.classList.contains("mini-sidebar")) {
+          el.classList.add("hidden"); // Mini sidebar açıkken metinleri gizle
+        } else {
+          el.classList.remove("hidden"); // Geniş görünümde metinleri göster
+        }
+      });
+    }
+    function toggleProfileDropdown() {
+      const dropdownMenu = document.getElementById("dropdownInformation");
+      dropdownMenu.classList.toggle("hidden"); // Menü görünürlüğünü toggle yapar
+    }
+    function toggleDropdown() {
+      const dropdown = document.getElementById("notificationDropdown");
+      dropdown.classList.toggle("hidden"); // Menü görünürlüğünü aç/kapa yapar
+    }
+  </script>
+</body>
+
 </html>
