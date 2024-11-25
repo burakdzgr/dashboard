@@ -10,48 +10,44 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 </head>
 
-<body class="bg-mainGray text-center">
-  <div class="flex h-full bg-gray-100">
-    <!-- component -->
-    <div class="flex h-screen w-full">
-      <!-- Left Pane -->
-      <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
-        <div>
-          <img src="./assets/images/login-banner.png" alt="" class="w-full h-full">
-        </div>
+<body class="bg-mainGray">
+  <div class="flex h-full ">
+    <!-- Left Pane -->
+    <div class="hidden lg:flex items-center justify-center flex-1 bg-white text-black">
+      <div>
+        <img src="./assets/images/login-banner.png" alt="" class="w-full h-full">
       </div>
-      <!-- Right Pane -->
-      <div class="w-full bg-gray-100 lg:w-1/2 flex items-center justify-center">
-        <div class="max-w-md w-full p-6">
-          <h1 class="text-3xl  mb-6 text-black text-center">Hesabınıza giriş yapın</h1>
-          <h1 class="text-sm  mb-6 text-gray-500 text-center">Sorularınız ve destek için <a
-              href="tel:0542 694 4008">0542 694 4008</a> numaramızı arayabilirsiniz.</h1>
-          <form action="#" method="POST" class="space-y-4">
-            <!-- Your form elements go here -->
-            <div class="relative border rounded mb-4 shadow appearance-none label-floating">
-              <input class="w-full py-2 px-3 text-green-darker leading-normal rounded" id="username" type="text"
-                placeholder="Username">
-              <label class="absolute block text-green-darker top-0 left-0 w-full px-3 py-2 leading-normal"
-                for="username">
-                Username
-              </label>
-            </div>
-            <div class="relative z-0 w-full mb-5 group">
-              <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" " required />
-              <label for="floating_phone"
-                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
-                number (123-456-7890)</label>
-            </div>
-
-            <div>
-              <button type="submit"
-                class="w-full bg-mainBlue text-white p-2 rounded-md hover:bg-mainBlue/50800 focus:outline-none focus:bg-black focus:outline-none transition-colors duration-300">Sign
-                Up</button>
-            </div>
-          </form>
+    </div>
+    <!-- Right Pane -->
+    <div class="w-full bg-white lg:w-1/2 flex items-center justify-center">
+      <div class="max-w-md w-full p-6">
+        <div class="flex justify-center w-full h-full mb-4">
+          <img src="./assets/images/logo.png" alt="" class="w-1/2 object-cover">
         </div>
+        <h1 class="text-3xl font-semibold mb-6 text-black text-center">Hesabınıza giriş yapın</h1>
+        <span class="text-sm mb-6 text-gray-500 text-center w-full block">Sorularınız ve destek için
+          <a href="tel:0542 694 4008" class="underline font-medium"> 0542 694 4008 </a>
+          numaramızı arayabilirsiniz.
+        </span>
+        <form action="#" method="POST" class="space-y-4">
+          <!-- Your form elements go here -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-textColor text-center">Email</label>
+            <input type="text" id="email" name="email"
+              class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-textColor text-center">Telefon</label>
+            <input type="text" id="phone" name="phone"
+              class="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" />
+          </div>
+
+          <div>
+            <button type="submit"
+              class="w-full bg-customBlack text-white p-2 rounded-md hover:bg-mainBlue/50800 focus:bg-black focus:outline-none transition-colors duration-300">Giriş
+              Yap</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
